@@ -1,0 +1,13 @@
+Name: Layout Selector
+AntiForgery: enabled
+Author: Downplay Design
+Website: http://layoutselector.codeplex.com
+Version: 0.3
+OrchardVersion: 1.5
+Description: This part will add a drop-down box to any content item, allowing you to easily change the layout per content item. You can implement ILayoutAlternatesProvider in your theme or module to supply override names. This will integrate perfectly with any custom Theme switchers. The default layout will still be used where an override isn't found in the active Theme.
+Features:
+    Downplay.Orchard.LayoutSelector:
+        Name: Layout Selector
+        Category: Designer
+        Description: This part will add a drop-down box to any content item, allowing you to easily change the layout per content item. You can implement ILayoutAlternatesProvider in your theme or module to supply override names. This will integrate perfectly with any custom Theme switchers. The default layout will still be used where an override isn't found in the active Theme.
+        Dependencies: Orchard.Themes
