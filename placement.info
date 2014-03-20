@@ -1,3 +1,6 @@
 ﻿<Placement>
     <Place Parts_LayoutSelector_Edit="Content:7.5"/>
+    <Match DisplayType="SummaryAdmin">
+      <Place Parts_LayoutSelector_SummaryAdmin="Content:7.5"/>
+    </Match>
 </Placement>
