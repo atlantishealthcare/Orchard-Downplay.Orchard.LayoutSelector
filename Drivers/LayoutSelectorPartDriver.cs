@@ -41,6 +41,9 @@ namespace Downplay.Orchard.LayoutSelector.Drivers
                 wc.Layout.Metadata.Alternates.Add("Layout__"+part.LayoutName);
             }
 
+            return ContentShape("Parts_LayoutSelector_SummaryAdmin", () =>
+                    shapeHelper.Parts_LayoutSelector_SummaryAdmin(LayoutName: part.LayoutName));
+
             // The part itself displays nothing (empty DriverResult)
             return new DriverResult();
         }
