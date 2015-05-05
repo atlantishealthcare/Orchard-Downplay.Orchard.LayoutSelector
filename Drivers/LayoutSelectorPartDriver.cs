@@ -8,6 +8,7 @@ using Orchard;
 using Downplay.Orchard.LayoutSelector.Services;
 using Orchard.ContentManagement;
 using Downplay.Orchard.LayoutSelector.ViewModels;
+using Orchard.ContentManagement.Handlers;
 
 namespace Downplay.Orchard.LayoutSelector.Drivers
 {
@@ -74,6 +75,17 @@ namespace Downplay.Orchard.LayoutSelector.Drivers
                          TemplateName: "Parts/LayoutSelector",
                          Model: model,
                          Prefix: Prefix));
+        }
+
+        protected override void Importing(LayoutSelectorPart part, ImportContentContext context) {
+            var displayAlias = context.Attribute(part.PartDefinition.Name, "LayoutName");
+            if (displayAlias != null) {
+                part.LayoutName = displayAlias;
+            }
+        }
+
+        protected override void Exporting(LayoutSelectorPart part, ExportContentContext context) {
+            context.Element(part.PartDefinition.Name).SetAttributeValue("LayoutName", part.Record.LayoutName);
         }
     }
 }
